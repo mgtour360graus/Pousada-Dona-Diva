@@ -1,0 +1,59 @@
+/* Legibilidade e navegação, preservando a identidade aprovada. */
+html{font-size:100%}
+body{overflow-x:hidden}
+body{font-size:1rem;line-height:1.6}
+.nav,.btn,.text-link,.expand-btn,.map-back,.location-copy .btn,.mobile-bar a{font-size:1rem}
+.brand-sub{font-size:.75rem;letter-spacing:.08em}
+.small,.hero-place,.stat span,.section-head>p,.room-details p,.location-list li,.location .small,.plan p,.footer-place,.footer-nav,.footer-bottom,.map-caption p,.map-caption .load-map,.map-state,.contact-info,.contact-status,.illustration-notice,.art-note,.room-detail-tag,.scene-label,.scene-counter{font-size:.875rem;line-height:1.6}
+.hero-copy>p,.intro p,.location-copy>p,.modal-content p,.contact-modal p,.contact-modal ul{font-size:1rem}
+.eyebrow{font-size:.75rem;letter-spacing:.1em}
+.room-tab .name{font-size:1.125rem}.room-tab .num{font-size:.875rem}
+.btn,.text-link,.nav>a,.footer-nav a,.contact-info,.expand-btn,.map-back,.map-caption .load-map,.modal-paging button,.modal-close,.menu-toggle{min-height:48px}
+.modal-close,.menu-toggle,.modal-paging button{min-width:48px}
+.contact-info{display:inline-flex;align-items:center}
+a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid #185d91;outline-offset:4px}
+.tour-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start}
+.tour-back,.tour-open-rooms{min-height:48px;font-size:1rem;background:#fffef8;color:#244e42}
+.tour-open-rooms{background:#244e42;color:#fffef8}
+.tour-back .tour-back-label{display:inline}
+.tour-back{width:auto}
+.tour-room-heading{max-width:none;justify-self:center;background:#fffef8;padding:10px 14px}
+.tour-room-heading h3{font-size:1rem;line-height:1.4}
+.tour-count{font-size:.875rem;letter-spacing:0}
+.tour-edge{align-items:end}
+.tour-demo{font-size:.875rem;line-height:1.5;background:#fffef8;max-width:430px;padding:8px 12px}
+.tour-step{min-width:100px;width:auto;height:auto;min-height:48px;border-radius:6px;font-size:1rem;padding:10px 14px;gap:9px;background:#fffef8;line-height:1.4}
+.tour-drawer{width:420px;padding:18px}
+.tour-drawer-close{width:48px;height:48px}
+.tour-drawer-head{position:sticky;top:-18px;z-index:2;background:var(--cream);padding:10px 0}
+.tour-tabs{grid-template-columns:1fr}
+.tour-tab{font-size:1rem;min-height:72px;gap:12px;padding:10px;text-wrap:pretty}
+.tour-tab .tour-tab-number{font-size:.875rem;opacity:1}
+.tour-tab-thumb{width:72px;height:48px;border-radius:4px;object-fit:cover;flex:0 0 72px}
+.tour-tab-label{min-width:0;flex:1}
+.tour-tab[aria-pressed=true]:after{content:'Atual';font-size:.875rem;letter-spacing:0}
+.tour-drawer-note,.tour-loading{font-size:1rem}
+.tour-loading button{min-height:48px;font-size:1rem}
+@media(max-width:760px){
+ .navrow{height:auto;min-height:90px}.nav{top:89px}
+ .room-tab .name{font-size:1rem}.room-tab .num{font-size:.875rem}
+ .room-tabs,.js .room-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.room-tab{min-width:0}.room-tab .name{min-width:0;overflow-wrap:anywhere}
+ .tour-drawer-head{top:-14px}
+ .hero h1{font-size:clamp(2.6rem,11vw,4.5rem)}
+ .tour-top{grid-template-columns:1fr 1fr;gap:8px;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right))}
+ .tour-back{grid-column:1;grid-row:1;justify-self:start;padding:10px;font-size:.9375rem;gap:6px}
+ .tour-open-rooms{grid-column:2;grid-row:1;justify-self:end;padding:10px;font-size:.9375rem;gap:6px}
+ .tour-room-heading{grid-column:1/-1;grid-row:2;max-width:100%;padding:6px 12px;display:flex;gap:12px;align-items:center}
+ .tour-room-heading h3{font-size:1rem}.tour-count{font-size:.875rem;margin:0;white-space:nowrap}
+ .tour-edge{flex-direction:column;align-items:stretch;gap:8px}
+ .tour-demo{max-width:none;font-size:.875rem}
+ .tour-quick{justify-content:space-between;gap:12px}.tour-step{font-size:1rem;min-height:48px}
+ .tour-drawer{width:420px;padding:14px}.tour-tab{font-size:1rem;min-height:72px}
+ .tour-drawer-note{font-size:.875rem}
+ .brand-name{font-size:1.0625rem}.brand-sub{font-size:.75rem;letter-spacing:0}
+ .footer-bottom{font-size:.875rem}
+}
+@media(max-height:500px){.tour-demo{display:none}.tour-room-heading{padding:5px 10px}.tour-drawer{width:420px}.tour-tabs{grid-template-columns:1fr}.tour-tab{font-size:1rem;min-height:72px}.tour-drawer-note{font-size:.875rem}}
+@media(max-width:370px){.tour-tab-thumb{width:56px;flex-basis:56px}.tour-tab{gap:8px}.tour-back,.tour-open-rooms{font-size:.875rem}.brand-name{font-size:1rem}.brand-sub{font-size:.6875rem}}
+@media(max-width:370px){.room-tabs,.js .room-tabs{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
