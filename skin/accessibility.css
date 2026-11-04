@@ -1,6 +1,12 @@
 /* Legibilidade e navegação, preservando a identidade aprovada. */
 html{font-size:100%}
 body{overflow-x:hidden}
+.tour-render{pointer-events:none}
+.native-tour-frame{pointer-events:auto;touch-action:none}
+.tour-loading{pointer-events:none}
+.tour-loading button{pointer-events:auto}
+.tour-demo{pointer-events:none!important}
+.tour-demo[hidden]{display:none!important}
 body{font-size:1rem;line-height:1.6}
 .nav,.btn,.text-link,.expand-btn,.map-back,.location-copy .btn,.mobile-bar a{font-size:1rem}
 .brand-sub{font-size:.75rem;letter-spacing:.08em}

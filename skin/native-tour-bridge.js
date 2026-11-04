@@ -12,7 +12,12 @@
  }
  function sync(){const state=currentState();if(state)post('change',state);}
  function applyPause(){const tour=window.tour;if(!tour)return;if(desiredPaused){if(!tour.isPaused)tour.pause();}else if(tour.isPaused)tour.resume();}
- function loaded(){attach();sync();post('loaded',currentState()||{});applyPause();}
+ function loaded(){
+  attach();sync();
+  const preload=document.getElementById('preloadContainer');
+  if(preload)preload.style.pointerEvents='none';
+  post('loaded',currentState()||{});applyPause();
+ }
  function attach(){
   if(attached||!window.tour||!window.tour.player)return;
   root=window.tour.player.getById('rootPlayer');playlist=window.tour.player.getById('mainPlayList');
@@ -51,6 +56,10 @@
  document.addEventListener('keydown',function(event){
   if(event.key==='Escape'&&!document.fullscreenElement&&!document.webkitFullscreenElement){event.preventDefault();post('escape');}
   if(event.key==='Tab'){event.preventDefault();post('focus-controls');}
+ });
+ // O aviso de ajuda não precisa continuar após o primeiro toque/arraste.
+ ['pointerdown','touchstart'].forEach(function(type){
+  document.addEventListener(type,function(){post('interaction');},{capture:true,passive:true});
  });
  // Checa somente um recurso já exigido pelo panorama inicial; os caminhos continuam relativos.
  function checkMedia(){const probe=new Image();probe.onerror=function(){post('media-error');};probe.src='media/panorama_37840B23_2346_6223_41BD_406394526918_0/f/3/0_0.webp';}
