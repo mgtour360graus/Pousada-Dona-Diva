@@ -57,10 +57,14 @@
   if(event.key==='Escape'&&!document.fullscreenElement&&!document.webkitFullscreenElement){event.preventDefault();post('escape');}
   if(event.key==='Tab'){event.preventDefault();post('focus-controls');}
  });
- // O aviso de ajuda não precisa continuar após o primeiro toque/arraste.
- ['pointerdown','touchstart'].forEach(function(type){
-  document.addEventListener(type,function(){post('interaction');},{capture:true,passive:true});
- });
+ // Um clique na escolha de áudio não dispensa a orientação. Um arraste, sim.
+ let gestureStart=null;
+ document.addEventListener('pointerdown',function(e){gestureStart={x:e.clientX,y:e.clientY};},{capture:true,passive:true});
+ document.addEventListener('pointermove',function(e){
+  if(gestureStart&&Math.hypot(e.clientX-gestureStart.x,e.clientY-gestureStart.y)>8){post('interaction');gestureStart=null;}
+ },{capture:true,passive:true});
+ ['pointerup','pointercancel'].forEach(function(type){document.addEventListener(type,function(){gestureStart=null;},{capture:true,passive:true});});
+ document.addEventListener('touchmove',function(){post('interaction');},{capture:true,passive:true});
  // Checa somente um recurso já exigido pelo panorama inicial; os caminhos continuam relativos.
  function checkMedia(){const probe=new Image();probe.onerror=function(){post('media-error');};probe.src='media/panorama_37840B23_2346_6223_41BD_406394526918_0/f/3/0_0.webp';}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){connect();checkMedia();});else{connect();checkMedia();}
