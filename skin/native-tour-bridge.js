@@ -20,7 +20,8 @@
   // A visita começa estável. Os recursos e sequências originais continuam no motor.
   // A API observa estas propriedades e encerra a sequência inicial em execução.
   root.getByClassName('PanoramaCamera').forEach(function(camera){
-   camera.set('initialSequence',null);camera.set('idleSequence',null);
+   const entry=camera.get('initialSequence');if(entry)entry.set('movements',[]);
+   camera.set('idleSequence',null);camera.set('displayOriginPosition',null);
    camera.set('automaticRotationSpeed',0);
   });
   attached=true;playlist.bind('change',sync,root);
