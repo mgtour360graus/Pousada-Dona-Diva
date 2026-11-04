@@ -237,7 +237,7 @@ function showNativeStatus(text,retry){byId('tourLoading').hidden=false;byId('tou
 function ensureNativeTour(){
  if(nativeStarted)return;
  nativeStarted=true;nativeReady=false;nativeLoaded=false;showNativeStatus('Carregando o tour 360°…',false);
- nativeFrame.src=tourConfig.entry+"?skin=20261104d";
+ nativeFrame.src=tourConfig.entry+"?skin=20261104e";
  if(nativeTimeout)clearTimeout(nativeTimeout);
  nativeTimeout=setTimeout(()=>{if(!nativeLoaded)showNativeStatus(window.location.protocol==='file:'?'Para carregar o tour, abra este projeto em um servidor HTTP/HTTPS. A pasta media/ deve estar no mesmo diretório.':'As imagens do tour ainda não carregaram. Confira sua conexão e a pasta media/ no servidor.',true);},25000);
 }
