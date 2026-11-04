@@ -34,7 +34,7 @@ body.tour-open>header,body.tour-open>main,body.tour-open>footer,body.tour-open>n
 
 </style>
 <script>document.documentElement.className+=' js';</script>
-<link rel="stylesheet" href="skin/accessibility.css?v=20261104b">
+<link rel="stylesheet" href="skin/accessibility.css?v=20261104d">
 </head>
 <body>
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
@@ -237,7 +237,7 @@ function showNativeStatus(text,retry){byId('tourLoading').hidden=false;byId('tou
 function ensureNativeTour(){
  if(nativeStarted)return;
  nativeStarted=true;nativeReady=false;nativeLoaded=false;showNativeStatus('Carregando o tour 360°…',false);
- nativeFrame.src=tourConfig.entry+"?skin=20261104c";
+ nativeFrame.src=tourConfig.entry+"?skin=20261104d";
  if(nativeTimeout)clearTimeout(nativeTimeout);
  nativeTimeout=setTimeout(()=>{if(!nativeLoaded)showNativeStatus(window.location.protocol==='file:'?'Para carregar o tour, abra este projeto em um servidor HTTP/HTTPS. A pasta media/ deve estar no mesmo diretório.':'As imagens do tour ainda não carregaram. Confira sua conexão e a pasta media/ no servidor.',true);},25000);
 }

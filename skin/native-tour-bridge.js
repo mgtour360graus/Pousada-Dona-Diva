@@ -31,7 +31,7 @@
   });
   attached=true;playlist.bind('change',sync,root);
   const items=playlist.get('items')||[];
-  items.forEach(function(item){item.bind('begin',function(){sync();post('loaded',currentState()||{});applyPause();},root);});
+  items.forEach(function(item){item.bind('begin',function(){sync();if(window.tour.isInitialized)post('loaded',currentState()||{});applyPause();},root);});
   post('ready',currentState()||{});applyPause();
   if(window.tour.isInitialized)loaded();
  }

@@ -4,6 +4,7 @@ body{overflow-x:hidden}
 .tour-render{pointer-events:none}
 .native-tour-frame{pointer-events:auto;touch-action:none}
 .tour-loading{pointer-events:none}
+.tour-loading{top:auto;bottom:80px;transform:translateX(-50%)}
 .tour-loading button{pointer-events:auto}
 .tour-demo{pointer-events:none!important}
 .tour-demo[hidden]{display:none!important}
